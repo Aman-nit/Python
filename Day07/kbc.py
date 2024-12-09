@@ -49,7 +49,7 @@ amount = 0  # Keeps track of the total prize money won
 # Start the game loop
 while count < len(kbc_questions):  # Loop until all questions are asked or a wrong answer is given
     # Print the current question
-    print(f"Question {count + 1}: {kbc_questions[count]}")
+    print(f"\n\nQuestion {count + 1}: {kbc_questions[count]} ")
     
     # Print the options for the current question
     for option in options[count]:
