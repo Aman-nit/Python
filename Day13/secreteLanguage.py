@@ -13,46 +13,39 @@
 # Your program should ask whether you want to code or decode
 
 
-# st = input("Enter a message: ")
-# coding =input("Enter 1 for Coding 0 for Decoding: ")
-# coding = True if coding ==1 else False
-# words = st.split(" ")
-# if(coding):
-#     nwords=[]
-#     for word in words:
-#         if(len(word >= 3)):
-#             r1 = "ghf"
-#             r2 = "bnc"
-#             strnew = r1+ word[1:] + word[0] + r2
-#             nwords.append(strnew)
-#         else:
-#             nwords.append(word[::-1])
-#     print(" ".join(nwords))
+import random
+import string
+
+def rando_srtring3(length):
+  return ''.join(random.choices("string.ascii_lowercase", k =length))
+ 
 
 
-st = input("Enter message")
+
+st = input("Enter a message: ")
 words = st.split(" ")
-coding = input("1 for Coding or 0 for Decoding")
-coding = True if (coding=="1") else False
-print(coding)
+coding = input("1 for Coding 0 for Decodig: ")
+coding = True if (coding == "1") else False
 if(coding):
-  nwords = []
+  encoded_wordds =[]
   for word in words:
-    if(len(word)>=3):
-      r1 = "dsf"
-      r2 = "jkr"
-      stnew = r1+ word[1:] + word[0] + r2
-      nwords.append(stnew)
+    if(len(word) >= 3):
+      stnew = rando_srtring3(3) + word[1:] +word[0] + rando_srtring3(3)
+      encoded_wordds.append(stnew)
     else:
-      nwords.append(word[::-1])
-  print(" ".join(nwords))
+      encoded_wordds.append(word[::-1])
+    finalSt = " ".join(encoded_wordds)
+  print("Encoded message: ",finalSt) 
 
-else:
-  nwords = []
-  for word in words:
-    if(len(word)>=3): 
-      stnew = word[3:-3]
-      stnew = stnew[-1] + stnew[:-1]
-      nwords.append(stnew)
-    else:
-      nwords.append(word[::-1])
+else: 
+    decoded_words = []
+    for word in words:
+        if len(word) >= 3:  # At least 6 chars (2 random + original word >= 3 + 2 random)
+            original_word = word[3:-3]  # Remove random strings
+            decoded_word = original_word[-1] + original_word[:-1]  # Rearrange to original
+            decoded_words.append(decoded_word)
+        else:
+            word = word[::-1]
+            decoded_words.append(word)
+    stn = " ".join(decoded_words)
+    print("Decoded message: ", stn)
