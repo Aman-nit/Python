@@ -9,4 +9,12 @@
 
 import os
 
+files = os.listdir(".")
+i = 1
+for file in files:
+    if file.endswith(".jpeg"):
+        os.rename(file ,f"hello0{i}.jpeg")
+        i+=1
+    
+
 
