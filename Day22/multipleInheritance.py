@@ -38,7 +38,7 @@ class Dog(Animal, Mammal):
 
 
 
-#MRO
+#MRO :- Method resolution order
 class Employee:
   def __init__(self, name):
     self.name = name
