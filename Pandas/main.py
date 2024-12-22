@@ -54,9 +54,63 @@ train.index=ordinal_list#changing index 0 , 1, 2 to first second
 
 
 ser = pd.Series(np.random.rand(5), index=np.arange(5)) #creat a random float of 5 rows series
-print(ser)
+#print(ser)
 
 newDataaFrame = pd.DataFrame(np.random.rand(100,5),index= np.arange(100)) #creat a random 100 rows and 5 coloums data frame with all the series will be floating numbers
-print(newDataaFrame)
-print(type(newDataaFrame))
-print(newDataaFrame.dtypes)#print data types of all the coloum/series
+# print(newDataaFrame)
+#print(type(newDataaFrame))
+#print(newDataaFrame.dtypes)#print data types of all the coloum/series
+
+#print(newDataaFrame.to_numpy())
+
+newDataaFrame.T #transpose 
+#print(newDataaFrame.head())
+
+#shorting the index
+newDataaFrame.sort_index(axis=0,ascending=False,inplace=True)#axis = 0 means Rows, axis = 1 means coloums
+#if we will not use implace  = true , this will  creat a new data frame instead of modyfying
+
+#print(newDataaFrame)
+
+
+newdf = newDataaFrame # it will only creat a any copy with the name of newdf it will only point to the newDataFrame if i change any thing to newdf it will change newDataFrame it creat a only view
+
+#newdf[0][0] = 0.11
+#print(newDataaFrame)
+
+#To creat a copy of dataframe 
+newdf2 = newDataaFrame.copy()
+
+newdf2.sort_index(axis=0,ascending=True,inplace= True)
+#for changing any data from dataframe we have to use .loc function
+newdf2.loc[0,0] = 0.1234
+#print(newdf2.head())
+
+
+#for deleting any col 
+newdf2.drop(0,axis=1,inplace=True)# for deleting coloum for row axis = 0
+# print(newdf2.head())
+
+
+newdf2.columns = ["A", "B", "C", "D"]  # Match the number of columns in newdf2
+#print(newdf2.head())
+
+#for printing only a part of th data it will only in view mode
+#print(newdf2.loc[[4,5,6] ,['A','B','C']])
+
+
+
+#we can use CURD operation in the dataframe
+#print(newdf2.loc[(newdf2['A']<0.3) & (newdf2['C']>0.1)])
+
+
+#when we need to select the data by the index only wether the indexing by number or any string name 
+#print(newdf2.iloc[0,3])
+
+#print(newdf2)
+#print(newdf2.drop([1,5],axis=0))
+
+#for setting the new index 
+#print(newdf2.reset_index())#it will add new col of index 
+ #if we dont want new col of index we want to change the index we can do 
+print(newdf2.reset_index(drop=True))
