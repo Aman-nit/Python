@@ -171,5 +171,7 @@ newdf2.columns = ["A", "B", "C", "D"]  # Match the number of columns in newdf2
 
 
 # -------------------------------------------------------
-data = pd.read_excel('DSA sheet.xlsx')
-print(data.head())
+# data = pd.read_excel('DSA sheet.xlsx')
+# print(data.head())
+
+
