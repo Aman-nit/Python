@@ -128,7 +128,7 @@ newdf2.columns = ["A", "B", "C", "D"]  # Match the number of columns in newdf2
 # print(newdf2.info)
 
 
-
+#-------------------------------------------------------------------
 
 #ASSIGMENT BY CODE WITH HARRY 
 #CREAT A DATAFRAME WHICH CONTAINS ONLY INTEGERS WITH 3 ROW 2 COLUMNS AND RUN THE FOLLOWING DATAFRAME METHODS
@@ -142,23 +142,34 @@ newdf2.columns = ["A", "B", "C", "D"]  # Match the number of columns in newdf2
 # df.median()
 # df.std()
 
-df = pd.DataFrame(np.random.randint(0,9 ,size=(3,2)))
-df.columns = ['A','B']
-df.index = ['X','Y','Z']
-print(df)
-print("\nPrinting the describe function...\n")
-print(df.describe())
-print("\nPrinting the Mean function...\n")
-print(df.mean())
-print("\nPrinting the Corr function...\n")
-print(df.corr())
-print("\nPrinting the Count function...\n")
-print(df.count())
-print("\nPrinting the Max function...\n")
-print(df.max())
-print("\nPrinting the Min function...\n")
-print(df.min())
-print("\nPrinting the Medin function...\n")
-print(df.median())
-print("\nPrinting the std function...\n")
-print(df.std())
+# df = pd.DataFrame(np.random.randint(0,9 ,size=(3,2)))
+# df.columns = ['A','B']
+# df.index = ['X','Y','Z']
+# print(df)
+# print("\nPrinting the describe function...\n")
+# print(df.describe())
+# print("\nPrinting the Mean function...\n")
+# print(df.mean())
+# print("\nPrinting the Corr function...\n")
+# print(df.corr())
+# print("\nPrinting the Count function...\n")
+# print(df.count())
+# print("\nPrinting the Max function...\n")
+# print(df.max())
+# print("\nPrinting the Min function...\n")
+# print(df.min())
+# print("\nPrinting the Medin function...\n")
+# print(df.median())
+# print("\nPrinting the std function...\n")
+# print(df.std())
+
+
+
+
+
+
+
+
+# -------------------------------------------------------
+data = pd.read_excel('DSA sheet.xlsx')
+print(data.head())
